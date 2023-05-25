@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Red+Hat+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #0c0c0c;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+header {
+  width: 100%;
+  padding: 30px 150px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 998;
+}
+
+header .logo {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #344CA2;
+}
+
+header .menu-icon {
+    display: none; /* Masquer l'icône du menu par défaut */
+}
+
+header .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #344CA2;
+    margin-bottom: 5px;
+}
+
+.dropdown-menu {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.975);
+    z-index: 999;
+    text-align: center; /* Centrer le contenu */
+    pointer-events: none;
+    margin-left: -20px;
+}
+
+.dropdown-menu.hidden {
+    visibility: hidden;
+}
+
+
+.dropdown-menu.active {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.dropdown-menu ul.nav {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-menu ul.nav li {
+    margin-bottom: 20px;
+}
+
+.dropdown-menu ul.nav li a {
+    color: #0c0c0c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s ease-out;
+}
+
+.dropdown-menu ul.nav li a:hover {
+    color: #344CA2;
+}
+
+  
+  
+
+header ul.nav {
+  display: flex;
+}
+
+header ul.nav li {
+  list-style: none;
+  padding: 0 0 0 35px;
+}
+
+header ul.nav li a {
+  text-decoration: none;
+  color: #9FA2AC;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s ease-out;
+  text-align: center;
+}
+
+header ul.nav li:hover a {
+  color: #344CA2;
+}
+
+
+
+
+
+
+
+.carrousel {
+    margin: 20px 0;
+    margin-bottom: 5%;
+  }
+  
+  .carrousel h2 {
+    color: #0c0c0c;
+    text-align: center;
+    margin-bottom: 2%;
+  }
+  
+  .carrousel-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 150px;
+    margin-right: 20px;
+    background-color: #F7F7F7;
+    color: #344CA2;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .carrousel-container:last-child {
+    margin-right: 0;
+  }
+
+  .carrousel-container a {
+    text-decoration: none;
+    color: #0c0c0c;
+    font-weight: 600;
+  }
+  
+  .card:hover {
+    background-color: #344CA2;
+    color: white;
+  }
+
+  
+
+
+
+  /* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+    body {
+      padding: 0 20px; /* Adjust the padding as per your needs */
+    }
+  
+    header {
+      padding: 30px 20px; /* Adjust the padding as per your needs */
+    }
+  
+    header ul.nav {
+      display: none; /* Hide the navigation list */
+    }
+  
+    header .logo {
+      font-size: 1.2rem; /* Adjust the font size as per your needs */
+    }
+
+    .carrousel-container {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+      }
+
+    .carrousel h2 {
+        color: #0c0c0c;
+        text-align: center;
+        margin-bottom: 5%;
+      }
+  
+  
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -50%;
+    }
+
+    /* Add the burger menu */
+    header .menu-icon {
+      margin-top: .5%;
+      display: block; /* Show the burger menu icon */
+      color: #344CA2;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+        
+}
+  

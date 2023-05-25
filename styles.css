@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Red+Hat+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #0c0c0c;
+}
+
+h1 {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+header {
+  width: 100%;
+  padding: 30px 150px;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+}
+
+header .logo {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #344CA2;
+}
+
+header .menu-icon {
+    display: none; /* Masquer l'icône du menu par défaut */
+}
+
+header .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #344CA2;
+    margin-bottom: 5px;
+}
+
+.dropdown-menu {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.975);
+    z-index: 999;
+    text-align: center; /* Centrer le contenu */
+    pointer-events: none;
+    margin-left: -20px;
+  }
+
+  .dropdown-menu.hidden {
+    visibility: hidden;
+  }
+  
+  
+  .dropdown-menu.active {
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .dropdown-menu ul.nav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dropdown-menu ul.nav li {
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-menu ul.nav li a {
+    color: #0c0c0c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s ease-out;
+  }
+  
+  .dropdown-menu ul.nav li a:hover {
+    color: #344CA2;
+  }
+  
+  
+  
+
+header ul.nav {
+  display: flex;
+}
+
+header ul.nav li {
+  list-style: none;
+  padding: 0 0 0 35px;
+}
+
+header ul.nav li a {
+  text-decoration: none;
+  color: #9FA2AC;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s ease-out;
+  text-align: center;
+}
+
+header ul.nav li:hover a {
+  color: #344CA2;
+}
+
+section.hero {
+  width: 100%;
+  height: calc(100vh - (1.5rem + 65px));
+  display: flex;
+}
+
+section.hero .left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 150px;
+}
+
+section.hero .left .texts {
+  margin-bottom: 15%;
+}
+
+section.hero .left .texts h3 {
+  color: #344CA2;
+  text-transform: uppercase;
+  margin-bottom: 2.5%;
+}
+
+section.hero .left .texts h1 {
+  font-size: 3.75rem;
+  line-height: 110%;
+  margin-bottom: 3%;
+}
+
+section.hero .left .texts p {
+  font-size: 1.3rem;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  padding: 4% 0 8.5% 125px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right .img1 {
+  height: 100%;
+  width: 55%;
+  background: url(./Images/mamariri.png);
+  background-size: cover;
+  /* background-position: -50px 0; */
+  border-radius: 15px;
+}
+
+.right .img2 {
+  height: 100%;
+  width: calc(40% - 10px);
+  background: url(./Images/guigui.png);
+  background-size: cover;
+  background-position: -30px 0;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+
+  body {
+    padding: 0 20px; /* Adjust the padding as per your needs */
+    overflow: hidden;
+  }
+
+  header {
+    padding: 30px 20px; /* Adjust the padding as per your needs */
+  }
+
+  header ul.nav {
+    display: none; /* Hide the navigation list */
+  }
+
+  header .logo {
+    font-size: 1.2rem; /* Adjust the font size as per your needs */
+  }
+
+
+  /* Add the burger menu */
+  header .menu-icon {
+    margin-top: .5%;
+    display: block; /* Show the burger menu icon */
+    color: #344CA2;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  section.hero {
+    flex-direction: column; /* Stack the left and right sections vertically */
+    height: calc(100vh - (1.2rem + 105px)); /* Adjust the height as per your needs */
+  }
+
+  section.hero .left {
+    height: 45%;
+    width: calc(100% - 20px); /* Take full width of the container */
+    padding-left: 0; /* Remove left padding */
+    margin: 60px 20px 0 20px;
+  }
+
+  section.hero .left .texts {
+    margin-bottom: 40%; /* Adjust the margin as per your needs */
+  }
+
+  section.hero .left .texts h3 {
+    font-size: 0.8rem;
+  }
+
+  section.hero .left .texts h1 {
+    font-size: 1.65rem; /* Adjust the font size as per your needs */
+  }
+
+  section.hero .left .texts br {
+    display: none;
+  }
+
+  section.hero .left .texts p {
+    font-size: 1rem; /* Adjust the font size as per your needs */
+  }
+
+  section.hero .right {
+    height: 50%;
+    width: 100%;
+    padding: 0 0 10% 0;
+  }
+
+  section.hero .right .img1 {
+    height: 100%;
+    width: 100%;
+    background: url(Images/faces.png) no-repeat;
+    background-size: 137.5%;
+    background-position-x: -5px;
+  }
+
+  section.hero .right .img2 {
+    display: none;
+  }
+
+  
+}
